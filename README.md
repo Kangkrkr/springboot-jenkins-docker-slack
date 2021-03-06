@@ -11,8 +11,8 @@ docker pull jenkins/jenkins:lts
 - 이미지를 모두 내려받은 경우, 아래의 명령어를 입력하여 컨테이너에 올리는 작업을 수행한다.
 ```aidl
 // 8181 포트로 클라이언트에서 접속할 수 있다. 
-docker run -d -p 8181:8080 -v /jenkins:/var/jenkins_home --name [사용할 컨테이너명] -u root [이미지명]
-
+<이전버전> docker run -d -p 8181:8080 -v /jenkins:/var/jenkins_home --name [사용할 컨테이너명] -u root [이미지명]
+<신규버전> sudo docker run -d -p 8181:8080 -v /jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -u root [젠킨스이미지ID]
 -d	detached mode 흔히 말하는 백그라운드 모드
 -p	호스트와 컨테이너의 포트를 연결 (포워딩)
 -v	호스트와 컨테이너의 디렉토리를 연결 (마운트)
